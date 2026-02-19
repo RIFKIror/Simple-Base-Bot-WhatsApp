@@ -1,5 +1,8 @@
 # Simple Base Bot WhatsApp
-> Simple base wa, menggunakan NodeJS dengan type case
+![Node.js](https://img.shields.io/badge/Node.js-v18+-green)
+![NPM](https://img.shields.io/badge/NPM-enabled-red)
+![JavaScript](https://img.shields.io/badge/JavaScript-ESM-yellow)
+---
 #### Developer : —KyynXzz
 #### Whatsapp : [➥ Click Here](https://wa.me/6281239075413)
 #### Telegram : [➥ Click Here](https://t.me/kyynxz31)
