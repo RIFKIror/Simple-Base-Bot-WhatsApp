@@ -29,4 +29,4 @@ node index.js
 ```
 ---
 *📝 Note (Catatan)*
-> ➥ Makasih yg udh nyoba base bot saya, sebelumnya maaf bgt kalo ada kode yang masih berantakan, saya dibantu ai juga soalnya, sorry juga kalo misal fitur nya ada yg error, karna saya masih pemula
+> ➥ Makasih yg udh nyoba base bot saya, sebelumnya maaf bgt kalo ada kode yang masih berantakan atau ada fitur yang error, saya masih belajar buat bot wa, ohh iya jangan lupa star nya ya :v
