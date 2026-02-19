@@ -10,10 +10,10 @@
 ---
 #### Developer : —KyynXzz
 #### Whatsapp : [➥ Click Here](https://wa.me/6281239075413)
-### Channel Wa : [➥ Channel](https://whatsapp.com/channel/0029VbC2uly2f3EEsyAGna1d)
+#### Channel Wa : [➥ Channel](https://whatsapp.com/channel/0029VbC2uly2f3EEsyAGna1d)
 #### Telegram : [➥ Click Here](https://t.me/kyynxz31)
 #### API's : [➥ Go to API's](https://api.lexcode.biz.id)
-### MediaFire : [➥ Download](https://www.mediafire.com/file/g09xbjpj73rkx6d/simple-base-lex.zip/file)
+#### MediaFire : [➥ Download](https://www.mediafire.com/file/g09xbjpj73rkx6d/simple-base-lex.zip/file)
 ---
 ## Struktur Folder
 - index.js >> Setup pairing kode & Connect to WhatsApp
