@@ -28,3 +28,5 @@ npm install
 node index.js
 ```
 ---
+*📝 Note (Catatan)*
+> ➥ Makasih yg udh nyoba base bot saya, sebelumnya maaf bgt kalo ada kode yang masih berantakan, saya dibantu ai juga soalnya, sorry juga kalo misal fitur nya ada yg error, karna saya masih pemula
