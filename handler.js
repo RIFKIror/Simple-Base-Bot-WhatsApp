@@ -235,7 +235,6 @@ END:VCARD`,
       );
     }
 
-    // download video buffer
     const vidRes = await axios.get(video.url, {
       responseType: "arraybuffer",
       timeout: 60000,
@@ -258,7 +257,6 @@ END:VCARD`,
       { quoted: m }
     );
 
-    // kalau ada audio kirim juga
     if (audio?.url) {
       const audRes = await axios.get(audio.url, {
         responseType: "arraybuffer",
@@ -322,7 +320,7 @@ break;
     if (!data.success) {
       return lexbot.sendMessage(
         m.chat,
-        { text: `❌ Gagal stalk TikTok jir\n\n${data.message || "Unknown Error"}` },
+        { text: `❌ Gagal stalk TikTok\n\n${data.message || "Unknown Error"}` },
         { quoted: m }
       );
     }
