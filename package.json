@@ -1,0 +1,19 @@
+{
+  "name": "lex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "baileys": "^7.0.0-rc.9",
+    "cheerio": "^1.2.0",
+    "pino": "^10.3.0"
+  }
+}
