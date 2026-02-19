@@ -1,4 +1,5 @@
 # Simple Base Bot WhatsApp
 ## Developer : —KyynXzz
-# Whatsapp : [WhatsApp](https://wa.me/6281239075413)
+## Whatsapp : [Click Here](https://wa.me/6281239075413)
+## Telegram : [Click Here](https://t.me/kyynxz31)
 
