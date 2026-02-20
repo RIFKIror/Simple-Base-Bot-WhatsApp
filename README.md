@@ -6,13 +6,14 @@
 ![Axios](https://img.shields.io/badge/Axios-HTTP-blue)
 ![Cheerio](https://img.shields.io/badge/Cheerio-Scraping-orange)
 ---
-*Simple base bot wa, menggunakan NodeJS dengan type case*
+*Base ini dibuat oleh —KyynXz menggunakan NodeJS dengan type case*
 ---
 #### Developer : —KyynXzz
 #### Whatsapp : [➥ Click Here](https://wa.me/6281239075413)
 #### Channel Wa : [➥ Channel](https://whatsapp.com/channel/0029VbC2uly2f3EEsyAGna1d)
 #### Telegram : [➥ Click Here](https://t.me/kyynxz31)
 #### API's : [➥ Go to API's](https://api.lexcode.biz.id)
+#### Website : [➥ Click](https://kyynns.vercel.app)
 #### MediaFire : [➥ Download](https://www.mediafire.com/file/g09xbjpj73rkx6d/simple-base-lex.zip/file)
 ---
 ## Struktur Folder 📁
@@ -32,7 +33,7 @@
 - .spotify     => Mencari lagu di Spotify
 - .mf          => MediaFire Download File
 ---
-*⚙️ Cara Install*
+## Cara Install ⚙️
 ```bash
 pkg install git (jika belum ada git)
 git clone https://github.com/RIFKIror/Simple-Base-Bot-WhatsApp.git
@@ -41,5 +42,5 @@ npm install
 node index.js
 ```
 ---
-*📝 Note (Catatan)*
+## Note (Catatan) 📝
 > ➥ Makasih yg udh nyoba base bot saya, sebelumnya maaf bgt kalo ada kode yang masih berantakan atau ada fitur yang error, saya masih belajar buat bot wa, ohh iya jangan lupa star nya ya :v
