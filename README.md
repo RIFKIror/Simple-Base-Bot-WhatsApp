@@ -22,16 +22,19 @@
 - setting.js >> Setting seperti nama bot, owner, dan lain lain
 - feature/.. >> fitur scrape (biasanya dipake buat naro scrape)
 ---
-## Bot Feature Command ✨
-- .menu        => menampilkan pesan menu
-- .ping        => Cek kecepatan
-- .runtime     => Cek berapa lama bot aktif
-- .tt          => Download vidio tiktok
-- .ttstalk     => Mencari informasi akun tiktok
-- .ghstalk     => Mencari informasi akun github
-- .tebakgambar => Game tebak gambar
-- .spotify     => Mencari lagu di Spotify
-- .mf          => MediaFire Download File
+## ✨ Bot Feature Command
+
+| Command        | Description                          |
+|--------------- |--------------------------------------|
+| `.menu`        | Menampilkan pesan menu               |
+| `.ping`        | Cek kecepatan                        |
+| `.runtime`     | Cek berapa lama bot aktif            |
+| `.tt`          | Download video TikTok                |
+| `.ttstalk`     | Informasi akun TikTok                |
+| `.ghstalk`     | Informasi akun GitHub                |
+| `.tebakgambar` | Game tebak gambar                    |
+| `.spotify`     | Mencari lagu di Spotify              |
+| `.mf`          | MediaFire download file              |
 ---
 ## Cara Install ⚙️
 ```bash
