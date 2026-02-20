@@ -1,4 +1,4 @@
-# Simple Base Bot WhatsApp
+# ⚡ Simple Base Bot WhatsApp
 ![Node.js](https://img.shields.io/badge/Node.js-v18+-green)
 ![NPM](https://img.shields.io/badge/NPM-enabled-red)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ESM-yellow)
@@ -15,11 +15,22 @@
 #### API's : [➥ Go to API's](https://api.lexcode.biz.id)
 #### MediaFire : [➥ Download](https://www.mediafire.com/file/g09xbjpj73rkx6d/simple-base-lex.zip/file)
 ---
-## Struktur Folder
-- index.js >> Setup pairing kode & Connect to WhatsApp
+## Struktur Folder 📁
+- index.js   >> Setup pairing kode & Connect to WhatsApp
 - handler.js >> semua fitur ada di file handler.js type case
 - setting.js >> Setting seperti nama bot, owner, dan lain lain
 - feature/.. >> fitur scrape (biasanya dipake buat naro scrape)
+---
+## Bot Feature Command ✨
+- .menu        => menampilkan pesan menu
+- .ping        => Cek kecepatan
+- .runtime     => Cek berapa lama bot aktif
+- .tt          => Download vidio tiktok
+- .ttstalk     => Mencari informasi akun tiktok
+- .ghstalk     => Mencari informasi akun github
+- .tebakgambar => Game tebak gambar
+- .spotify     => Mencari lagu di Spotify
+- .mf          => MediaFire Download File
 ---
 *⚙️ Cara Install*
 ```bash
