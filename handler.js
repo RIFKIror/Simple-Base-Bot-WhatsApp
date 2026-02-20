@@ -798,6 +798,100 @@ break;
 }
 break;
 
+    case "mf": {
+  try {
+    if (!text) {
+      return sock.sendMessage(
+        m.chat,
+        { text: `❌ Masukkan URL MediaFire.\n\nContoh:\n${prefix}mf https://www.mediafire.com/file/xxxxx/file` },
+        { quoted: m }
+      );
+    }
+
+    const res = await axios.get(`https://api.lexcode.biz.id/api/dwn/mediafire?url=${encodeURIComponent(text)}`, {
+      timeout: 60000,
+      headers: {
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "application/json"
+      }
+    });
+
+    if (!res.data || !res.data.success) {
+      return sock.sendMessage(
+        m.chat,
+        { text: "❌ Gagal mengambil data MediaFire." },
+        { quoted: m }
+      );
+    }
+
+    const fileData = res.data.data;
+    if (!fileData?.downloadUrl) {
+      return sock.sendMessage(
+        m.chat,
+        { text: "❌ Download URL tidak ditemukan." },
+        { quoted: m }
+      );
+    }
+
+ const msgTextMf =
+ `*MEDIAFIRE DOWNLOADER
+ 
+ *Name*   : ${fileData.name}
+ *Size*   : ${fileData.size}
+ *Type*   : ${fileData.type}
+ *Upload* : ${fileData.uploadedAt}`;
+
+    await sock.sendMessage(
+  m.chat,
+  {
+    text: msgTextMf,
+    contextInfo: {
+      forwardingScore: 999,
+      isForwarded: true,
+      forwardedNewsletterMessageInfo: {
+        newsletterJid: "120363424411396051@newsletter",
+        newsletterName: "MediaFire Downloader",
+        serverMessageId: 1
+      }
+    }
+  },
+  { quoted: m }
+);
+
+    const fileRes = await axios.get(fileData.downloadUrl, {
+      responseType: "arraybuffer",
+      timeout: 120000,
+      headers: {
+        "User-Agent": "Mozilla/5.0"
+      }
+    });
+
+    const fileBuffer = Buffer.from(fileRes.data);
+    const urlName = fileData.downloadUrl.split("/").pop();
+    const fileName = urlName || `${fileData.name}.zip`;
+
+    await sock.sendMessage(
+      m.chat,
+      {
+        document: fileBuffer,
+        mimetype: "application/zip",
+        fileName: fileName,
+        caption: "*File berhasil di download*"
+      },
+      { quoted: m }
+    );
+
+  } catch (err) {
+    console.log("MEDIAFIRE ERROR:", err);
+    return sock.sendMessage(
+      m.chat,
+      { text: "❌ Terjadi kesalahan saat mendownload file." },
+      { quoted: m }
+    );
+  }
+}
+break;
+
       default: {
         await lexbot.sendMessage(
           m.chat,
