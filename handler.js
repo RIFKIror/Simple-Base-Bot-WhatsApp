@@ -702,6 +702,102 @@ case "reset": {
 }
 break;
 
+    case "spotify": {
+  try {
+    if (!text) {
+      return lexbot.sendMessage(
+        m.chat,
+        { text: `❌ Masukkan query lagu.\n\nContoh:\n${prefix}spotify I bet on losing dogs` },
+        { quoted: m }
+      );
+    }
+
+    const endpoint = `https://api.lexcode.biz.id/api/search/spotify?q=${encodeURIComponent(text)}`;
+    const res = await axios.get(endpoint, {
+      timeout: 60000,
+      headers: {
+        "User-Agent": "Mozilla/5.0",
+        "Accept": "application/json"
+      }
+    });
+
+    if (!res.data || !res.data.success) {
+      return lexbot.sendMessage(
+        m.chat,
+        { text: "❌ Gagal mengambil data Spotify." },
+        { quoted: m }
+      );
+    }
+
+    const tracks = res.data.tracks;
+    if (!tracks || tracks.length < 1) {
+      return lexbot.sendMessage(
+        m.chat,
+        { text: "❌ Lagu tidak ditemukan." },
+        { quoted: m }
+      );
+    }
+
+    const track = tracks[0];
+
+    const caption = `*❏ SPOTIFY SEARCH ❑*\n\n` +
+      `➥ *Title:* ${track.title}\n` +
+      `➥ *Artist:* ${track.artist}\n` +
+      `➥ *Album:* ${track.album}\n` +
+      `➥ *Duration:* ${track.duration}\n` +
+      `➥ *Link:* ${track.spotifyUrl}`;
+
+    let thumbBuffer = null;
+
+    if (track.thumbnail) {
+      const thumbRes = await axios.get(track.thumbnail, {
+        responseType: "arraybuffer",
+        timeout: 60000,
+        headers: {
+          "User-Agent": "Mozilla/5.0"
+        }
+      });
+
+      thumbBuffer = Buffer.from(thumbRes.data);
+    }
+
+    if (thumbBuffer) {
+      await lexbot.sendMessage(
+        m.chat,
+        {
+          image: thumbBuffer,
+          caption: caption,
+          contextInfo: {
+           forwardingScore: 9999,
+           isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: "120363424411396051@newsletter", 
+            newsletterName: `${track.title}`,
+            serverMessageId: 1
+           }
+         }
+        },
+        { quoted: m }
+      );
+    } else {
+      await lexbot.sendMessage(
+        m.chat,
+        { text: caption },
+        { quoted: m }
+      );
+    }
+
+  } catch (err) {
+    console.log("ERROR SPOTIFY SEARCH:", err);
+    return lexbot.sendMessage(
+      m.chat,
+      { text: "❌ Error saat mengambil data Spotify." },
+      { quoted: m }
+    );
+  }
+}
+break;
+
       default: {
         await lexbot.sendMessage(
           m.chat,
