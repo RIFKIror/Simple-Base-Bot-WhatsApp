@@ -801,7 +801,7 @@ break;
     case "mf": {
   try {
     if (!text) {
-      return sock.sendMessage(
+      return lexbot.sendMessage(
         m.chat,
         { text: `❌ Masukkan URL MediaFire.\n\nContoh:\n${prefix}mf https://www.mediafire.com/file/xxxxx/file` },
         { quoted: m }
@@ -817,7 +817,7 @@ break;
     });
 
     if (!res.data || !res.data.success) {
-      return sock.sendMessage(
+      return lexbot.sendMessage(
         m.chat,
         { text: "❌ Gagal mengambil data MediaFire." },
         { quoted: m }
@@ -826,7 +826,7 @@ break;
 
     const fileData = res.data.data;
     if (!fileData?.downloadUrl) {
-      return sock.sendMessage(
+      return lexbot.sendMessage(
         m.chat,
         { text: "❌ Download URL tidak ditemukan." },
         { quoted: m }
@@ -841,7 +841,7 @@ break;
  *Type*   : ${fileData.type}
  *Upload* : ${fileData.uploadedAt}`;
 
-    await sock.sendMessage(
+    await lexbot.sendMessage(
   m.chat,
   {
     text: msgTextMf,
@@ -870,7 +870,7 @@ break;
     const urlName = fileData.downloadUrl.split("/").pop();
     const fileName = urlName || `${fileData.name}.zip`;
 
-    await sock.sendMessage(
+    await lexbot.sendMessage(
       m.chat,
       {
         document: fileBuffer,
@@ -883,7 +883,7 @@ break;
 
   } catch (err) {
     console.log("MEDIAFIRE ERROR:", err);
-    return sock.sendMessage(
+    return lexbot.sendMessage(
       m.chat,
       { text: "❌ Terjadi kesalahan saat mendownload file." },
       { quoted: m }
