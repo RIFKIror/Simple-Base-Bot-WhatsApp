@@ -89,7 +89,7 @@ ${global.footer}`.trim();
               mentionedJid: [m.sender],
               forwardedNewsletterMessageInfo: {
          	 newsletterName: "—kyynxz | LexCodeAPI",
-         	 newsletterJid: "120363424411396051@newsletter"
+         	 newsletterJid: global.idchannel
                },
               isForwarded: true,
             },
@@ -146,7 +146,7 @@ ${days} hari ${hours} jam ${minutes} menit ${seconds} detik`.trim();
         mentionedJid: [m.sender],
         forwardedNewsletterMessageInfo: {
    	 newsletterName: "⚡ LexBot Runtime Status",
-   	 newsletterJid: "120363424411396051@newsletter"
+   	 newsletterJid: global.idchannel
         },
       },
     },
@@ -384,7 +384,7 @@ ${global.footer}
           mentionedJid: [m.sender],
           forwardedNewsletterMessageInfo: {
            newsletterName: "TikTok Stalker",
-           newsletterJid: "120363424411396051@newsletter"
+           newsletterJid: global.idchannel
           },
         },
       },
@@ -511,7 +511,7 @@ ${global.footer}
           mentionedJid: [m.sender],
          forwardedNewsletterMessageInfo: {
            newsletterName: "Github Stalker",
-           newsletterJid: "120363399579049501@newsletter"
+           newsletterJid: global.idchannel
           },
         },
       },
@@ -613,7 +613,7 @@ ${global.footer}
         mentionedJid: [m.sender],
         forwardedNewsletterMessageInfo: {
         newsletterName: "Tebak Gambar — Game",
-        newsletterJid: "120363424411396051@newsletter"
+        newsletterJid: global.idchannel
         },
       },
     },
@@ -771,7 +771,7 @@ break;
            forwardingScore: 9999,
            isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: "120363424411396051@newsletter", 
+            newsletterJid: global.idchannel, 
             newsletterName: `${track.title}`,
             serverMessageId: 1
            }
@@ -839,7 +839,9 @@ break;
  *Name*   : ${fileData.name}
  *Size*   : ${fileData.size}
  *Type*   : ${fileData.type}
- *Upload* : ${fileData.uploadedAt}`;
+ *Upload* : ${fileData.uploadedAt}
+ 
+ *Sedang mengirim file...*`;
 
     await lexbot.sendMessage(
   m.chat,
@@ -849,7 +851,7 @@ break;
       forwardingScore: 999,
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
-        newsletterJid: "120363424411396051@newsletter",
+        newsletterJid: global.idchannel,
         newsletterName: "MediaFire Downloader",
         serverMessageId: 1
       }
