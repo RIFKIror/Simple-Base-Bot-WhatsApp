@@ -75,7 +75,7 @@ async function connectToWhatsApp() {
     if (connection === "open") {
       console.log("[ LEXBOT ] : KONEKSI TERHUBUNG\n");
 
-      await lexbot.sendMessage("6285716474559@s.whatsapp.net", {
+      await lexbot.sendMessage(`${global.ownerNumber}@s.whatsapp.net`, {
         text: "KONEKSI BERHASIL\n\n© LexBot Simple Base"
       });
     }
