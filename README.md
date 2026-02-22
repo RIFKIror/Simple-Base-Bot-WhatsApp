@@ -7,7 +7,9 @@
 ![Cheerio](https://img.shields.io/badge/Cheerio-Scraping-orange)
 ---
 *Base ini dibuat menggunakan NodeJS dengan type case*
-*Base ini Cocok untuk di pelajari ataupun untuk dikembangkan*
+- Base ini Cocok untuk di pelajari ataupun untuk dikembangkan
+- Menggunakan baileys whiskey/socket
+- Version : 1.0
 ---
 #### Developer : —KyynXzz
 #### Whatsapp : [➥ Click Here](https://wa.me/6281239075413)
