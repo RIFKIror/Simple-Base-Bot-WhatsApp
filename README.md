@@ -39,6 +39,19 @@ global.prefix      => prefix command bot nya (Contoh : .menu)
 global.idchannel   => ganti dengan id channel wa kalian
 ```
 ---
+## Bagaimana cara menambah fitur?
+- Kalian bisa menambah fitur dengan cara ini
+
+```javascript
+case 'test':
+   await lexbot.sendMessage(
+     m.chat,
+     { text: "Halo ini fitur test" },
+     { quoted: m }
+   )
+   break;
+```
+---
 ## ✨ Bot Feature Command
 
 | Command        | Description                          |
