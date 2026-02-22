@@ -40,7 +40,7 @@ global.idchannel   => ganti dengan id channel wa kalian
 ```
 ---
 ## Bagaimana cara menambah fitur?
-- Kalian bisa menambah fitur dengan cara ini
+- Masuk ke file `handler.js` lalu tulis kode berikut, ini akan memunculkan pesan WhatsApp
 
 ```javascript
 case 'test':
