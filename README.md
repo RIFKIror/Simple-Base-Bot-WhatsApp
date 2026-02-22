@@ -22,6 +22,20 @@
 - setting.js >> Setting seperti nama bot, owner, dan lain lain
 - feature/.. >> fitur scrape (biasanya dipake buat naro scrape)
 ---
+## Setting & config bot 🛠️
+```bash
+Buka file setting.js, kalian bebas setting sesuai kemauan
+
+global.ownerName   => Nama Owner Bot
+global.ownerNumber => Nomor Owner Bot (62xxx)
+global.botName     => Nama bot nya
+global.botVersion  => Versi bot (misal 1.0)
+global.footer      => Teks yang muncul dibawah bot (footer)
+global.thumbnail   => Thumbnail gambar pada bot
+global.prefix      => prefix command bot nya (Contoh : .menu)
+global.idchannel   => ganti dengan id channel wa kalian
+```
+---
 ## ✨ Bot Feature Command
 
 | Command        | Description                          |
