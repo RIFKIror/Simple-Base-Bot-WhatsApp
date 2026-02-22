@@ -6,7 +6,8 @@
 ![Axios](https://img.shields.io/badge/Axios-HTTP-blue)
 ![Cheerio](https://img.shields.io/badge/Cheerio-Scraping-orange)
 ---
-*Base ini dibuat oleh —KyynXz menggunakan NodeJS dengan type case*
+*Base ini dibuat menggunakan NodeJS dengan type case*
+*Base ini Cocok untuk di pelajari ataupun untuk dikembangkan*
 ---
 #### Developer : —KyynXzz
 #### Whatsapp : [➥ Click Here](https://wa.me/6281239075413)
