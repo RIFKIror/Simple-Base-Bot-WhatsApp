@@ -6,19 +6,18 @@ const tebakGambarDB = new Map();
 export default async function handler(lexbot, m) {
   try {
     const body =
-      m.message?.conversation ||
-      m.message?.extendedTextMessage?.text ||
-      m.message?.imageMessage?.caption ||
-      m.message?.videoMessage?.caption ||
-      "";
-
+    m.message?.conversation ||
+    m.message?.extendedTextMessage?.text ||
+    m.message?.imageMessage?.caption ||
+    m.message?.videoMessage?.caption ||
+    m.message?.documentMessage?.caption ||
+    m.text ||
+  "";
     const prefix = global.prefix || ".";
-    const isCmd = body.startsWith(prefix);
+    const isCmd = body?.trim().startsWith(prefix);
 
-    const command = isCmd
-      ? body.slice(prefix.length).trim().split(" ")[0].toLowerCase()
-      : "";
-
+    const command = isCmd ? body.trim().slice(prefix.length).trim().split(" ")[0].toLowerCase()
+  : "";
     const args = isCmd ? body.trim().split(/ +/).slice(1) : [];
     const text = args.join(" ");
 
