@@ -7,7 +7,8 @@ import {
   makeWASocket,
   DisconnectReason,
   useMultiFileAuthState,
-  jidDecode
+  jidDecode,
+  downloadContentFromMessage
 } from "baileys";
 
 import readline from "readline";
@@ -111,22 +112,69 @@ async function connectToWhatsApp() {
 
       m.chat = m.key.remoteJid;
       m.isGroup = m.chat.endsWith("@g.us");
-      m.sender = lexbot.decodeJid(m.key.participant || m.key.remoteJid);
+      m.sender = lexbot.decodeJid(m.isGroup ? m.key.participant : m.key.remoteJid);
+
+      if (m.key.fromMe) return;
+      
       m.reply = (text) => lexbot.sendMessage(m.chat, { text }, { quoted: m });
 
-      const text = getMessageText(m);
+      if (m.message?.extendedTextMessage?.contextInfo?.quotedMessage) {
+     const ctx = m.message.extendedTextMessage.contextInfo;
+     const quotedMsg = ctx.quotedMessage;
+     const type = Object.keys(quotedMsg)[0];
+
+  m.quoted = {
+    type,
+    key: {
+      remoteJid: m.chat,
+      fromMe: ctx.participant === lexbot.user.id,
+      id: ctx.stanzaId,
+      participant: ctx.participant
+    },
+    sender: lexbot.decodeJid(ctx.participant),
+    message: quotedMsg,
+    mimetype:
+      quotedMsg?.imageMessage?.mimetype ||
+      quotedMsg?.videoMessage?.mimetype ||
+      quotedMsg?.documentMessage?.mimetype ||
+      null,
+
+    download: async () => {
+      const msgType = type.replace("Message", "");
+      const stream = await downloadContentFromMessage(
+        quotedMsg[type],
+        msgType
+      );
+
+      let buffer = Buffer.from([]);
+      for await (const chunk of stream) {
+        buffer = Buffer.concat([buffer, chunk]);
+      }
+
+      return buffer;
+      }
+    };
+  }
+      
+      const text = getMessageText(m)?.trim();
 
       if (!text || text.trim() === "") return;
 
       console.log(
-        `\n[ MESSAGE ]\nFROM : ${m.sender}\nCHAT : ${m.chat}\nTYPE : ${type}\nTEXT : ${text}\n`
-      );
-
-      await handler(lexbot, m);
-    } catch (err) {
-      console.log("Error messages.upsert:", err);
-    }
-  });
+  `\n[ MESSAGE ]` +
+  `\nFROM     : ${m.sender}` +
+  `\nCHAT     : ${m.chat}` +
+  `\nIS GROUP : ${m.isGroup}` +
+  `\nTYPE     : ${type}` +
+  `\nFROM ME  : ${m.key.fromMe}` +
+  `\nTEXT     : ${text}\n`
+);
+      
+  await handler(lexbot, m);
+  } catch (err) {
+    console.log("Error messages.upsert:", err);
+   }
+ });
 }
 
 connectToWhatsApp();
