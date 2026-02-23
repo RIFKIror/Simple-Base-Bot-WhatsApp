@@ -9,7 +9,8 @@
 *Base ini dibuat menggunakan NodeJS dengan type case*
 - Base ini Cocok untuk di pelajari ataupun untuk dikembangkan
 - Menggunakan baileys whiskey/socket
-- Version : 1.0
+- Dikembangkan oleh : `—KyynXz (Lexcode)`
+- Support run di panel pterodactly dan termux
 ---
 #### Developer : —KyynXzz
 #### Whatsapp : [➥ Click Here](https://wa.me/6281239075413)
@@ -17,7 +18,7 @@
 #### Telegram : [➥ Click Here](https://t.me/kyynxz31)
 #### API's : [➥ Go to API's](https://api.lexcode.biz.id)
 #### Website : [➥ Click](https://kyynns.vercel.app)
-#### MediaFire : [➥ Download](https://www.mediafire.com/file/g09xbjpj73rkx6d/simple-base-lex.zip/file)
+#### MediaFire : [➥ Download File](https://www.mediafire.com/file/hbjl91voyppzeu9/Simple-Base-Kyynxz.zip/file)
 ---
 ## Struktur Folder 📁
 - index.js   >> Setup pairing kode & Connect to WhatsApp
