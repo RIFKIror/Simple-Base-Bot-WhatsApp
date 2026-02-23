@@ -1,5 +1,7 @@
 import axios from "axios";
 import { ttdownV2 } from "./feature/tiktokdl.js";
+import { toFigure } from "./feature/tofigure.js";
+import { downloadContentFromMessage } from "baileys";
 
 const tebakGambarDB = new Map();
 
@@ -889,6 +891,72 @@ break;
       { text: "❌ Terjadi kesalahan saat mendownload file." },
       { quoted: m }
     );
+  }
+}
+break;
+
+  case "tofigure": {
+  const quoted = m.quoted ? m.quoted : m;
+  const mime =
+    quoted.mimetype ||
+    m.message?.imageMessage?.mimetype ||
+    null;
+
+  if (!mime || !mime.startsWith("image")) {
+    return m.reply("Reply atau kirim gambar dengan command .tofigure");
+  }
+
+  try {
+    await lexbot.sendMessage(m.chat, {
+      react: { text: "⌛", key: m.key }
+    });
+
+    let buffer;
+
+    if (m.quoted) {
+      buffer = await m.quoted.download();
+    } else {
+      const type = Object.keys(m.message)[0];
+      const msgType = type.replace("Message", "");
+
+      const stream = await downloadContentFromMessage(
+        m.message[type],
+        msgType
+      );
+
+      buffer = Buffer.from([]);
+      for await (const chunk of stream) {
+        buffer = Buffer.concat([buffer, chunk]);
+      }
+    }
+
+    const prompt =
+      text ||
+      "Turn this photo into a character figure with a box behind it and Blender modeling screen.";
+
+    const resultBuffer = await toFigure(buffer, prompt);
+
+    await lexbot.sendMessage(
+      m.chat,
+      {
+        image: resultBuffer,
+        caption: "✅ Successfully generated figure!"
+      },
+      { quoted: m }
+    );
+
+    await lexbot.sendMessage(m.chat, {
+      react: { text: "✅", key: m.key }
+    });
+
+  } catch (err) {
+    console.error(err);
+
+    await lexbot.sendMessage(m.chat, {
+      react: { text: "❌", key: m.key }
+    });
+
+    m.reply("Gagal memproses gambar.");
   }
 }
 break;
