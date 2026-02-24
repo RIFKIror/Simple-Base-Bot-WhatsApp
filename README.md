@@ -8,9 +8,11 @@
 ---
 *Base ini dibuat menggunakan NodeJS dengan type case*
 - Base ini Cocok untuk di pelajari ataupun untuk dikembangkan
-- Menggunakan baileys whiskey/socket
+- Menggunakan baileys versi ^7.0.0-rc.9
 - Dikembangkan oleh : `—KyynXz (Lexcode)`
 - Support run di panel pterodactly dan termux
+- [ ! ] Fix Spam protocol message
+- [ ! ] Fix pairing kode tidak terhubung
 ---
 #### Developer : —KyynXzz
 #### Whatsapp : [➥ Click Here](https://wa.me/6281239075413)
