@@ -11,8 +11,6 @@
 - Menggunakan baileys versi ^7.0.0-rc.9
 - Dikembangkan oleh : `—KyynXz (Lexcode)`
 - Support run di panel pterodactly dan termux
-- [ ! ] Fix Spam protocol message
-- [ ! ] Fix pairing kode tidak terhubung
 ---
 #### Developer : —KyynXzz
 #### Whatsapp : [➥ Click Here](https://wa.me/6281239075413)
@@ -23,10 +21,12 @@
 #### MediaFire : [➥ Download File](https://www.mediafire.com/file/hbjl91voyppzeu9/Simple-Base-Kyynxz.zip/file)
 ---
 ## Struktur Folder 📁
-- index.js   >> Setup pairing kode & Connect to WhatsApp
-- handler.js >> semua fitur ada di file handler.js type case
-- setting.js >> Setting seperti nama bot, owner, dan lain lain
-- feature/.. >> fitur scrape (biasanya dipake buat naro scrape)
+```javascript
+index.js    => Pairing kode & connect to WhatsApp
+handler.js  => Semua fitur type case ada di file `handler.js`
+setting.js  => Setting bot seperti owner, nama bot, dan lain lain
+feature/..  => Tempat untuk naro scrape, dan dipanggil di handler.js
+```
 ---
 ## Setting & config bot 🛠️
 ```bash
