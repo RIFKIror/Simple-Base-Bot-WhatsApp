@@ -6,6 +6,12 @@
 ![Axios](https://img.shields.io/badge/Axios-HTTP-blue)
 ![Cheerio](https://img.shields.io/badge/Cheerio-Scraping-orange)
 ---
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Runtime-NodeJS-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Baileys-7.0.0--rc.9-25D366?style=for-the-badge"/>
+</p>
+---
 *Base ini dibuat menggunakan NodeJS dengan type case*
 - Base ini Cocok untuk di pelajari ataupun untuk dikembangkan
 - Menggunakan baileys versi ^7.0.0-rc.9
