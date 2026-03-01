@@ -71,23 +71,23 @@ case 'test':
 | `.mf`          | MediaFire download file              |
 ---
 ## Cara Install & Cara Penggunaannya ⚙️
-- jika belum ada git, install dg command berikut (termux)
+# jika belum ada git, install dg command berikut (termux)
 ```bash
-pkg install git (Untuk Termux)
+pkg install git
 ```
-- menggunakan git clone, supaya repo bisa disalin ke direktori
+# menggunakan git clone, supaya repo bisa disalin ke direktori
 ```bash
 git clone https://github.com/RIFKIror/Simple-Base-Bot-WhatsApp.git
 ```
-- Masuk ke folder base bot (sesuaikan dg nama git reponya)
+# Masuk ke folder base bot (sesuaikan dg nama git reponya)
 ```bash
 cd Simple-Base-Bot-WhatsApp
 ```
-- Install semua library yang ada di package.json
+# Install semua library yang ada di package.json
 ```bash
 npm install
 ```
-- Jalankan file utama `index.js`
+# Jalankan file utama `index.js`
 ```bash
 node index.js
 ```
