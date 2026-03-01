@@ -71,7 +71,7 @@ case 'test':
 | `.mf`          | MediaFire download file              |
 ---
 ## Cara Install ⚙️
-# jika belum ada git, install dg command berikut (termux)
+- jika belum ada git, install dg command berikut (termux)
 ```bash
 pkg install git
 ```
