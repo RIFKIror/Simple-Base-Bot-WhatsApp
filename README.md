@@ -70,12 +70,25 @@ case 'test':
 | `.spotify`     | Mencari lagu di Spotify              |
 | `.mf`          | MediaFire download file              |
 ---
-## Cara Install ⚙️
+## Cara Install & Cara Penggunaannya ⚙️
+- jika belum ada git, install dg command berikut (termux)
 ```bash
-pkg install git (jika belum ada git)
+pkg install git (Untuk Termux)
+```
+- menggunakan git clone, supaya repo bisa disalin ke direktori
+```bash
 git clone https://github.com/RIFKIror/Simple-Base-Bot-WhatsApp.git
+```
+- Masuk ke folder base bot (sesuaikan dg nama git reponya)
+```bash
 cd Simple-Base-Bot-WhatsApp
+```
+- Install semua library yang ada di package.json
+```bash
 npm install
+```
+- Jalankan file utama `index.js`
+```bash
 node index.js
 ```
 ---
