@@ -70,27 +70,33 @@ case 'test':
 | `.spotify`     | Mencari lagu di Spotify              |
 | `.mf`          | MediaFire download file              |
 ---
-## Cara Install & Cara Penggunaannya ⚙️
+## Cara Install ⚙️
 # jika belum ada git, install dg command berikut (termux)
 ```bash
 pkg install git
 ```
-# menggunakan git clone, supaya repo bisa disalin ke direktori
+- menggunakan git clone, supaya repo bisa disalin ke direktori
 ```bash
 git clone https://github.com/RIFKIror/Simple-Base-Bot-WhatsApp.git
 ```
-# Masuk ke folder base bot (sesuaikan dg nama git reponya)
+- Masuk ke folder base bot (sesuaikan dg nama git reponya)
 ```bash
 cd Simple-Base-Bot-WhatsApp
 ```
-# Install semua library yang ada di package.json
+- Install semua library yang ada di package.json
 ```bash
 npm install
 ```
-# Jalankan file utama `index.js`
+- Jalankan file utama `index.js`
 ```bash
 node index.js
 ```
+---
+## Cara Penggunaannya ⤵️
+- Setelah file dijalankan, masukan nomor WhatsApp yang mau dijadikan bot (Example: `62812xxx`)
+- Nanti akan muncul pairing kode, `Contoh : TGA-WKZ`
+- buka wa, klik perangkat tertaut, pencet tautkan perangkat (dg nomor handphone, jgn qr code)
+- Masukin pairing kode yang tadi udh muncul, selesai
 ---
 ## Note (Catatan) 📝
 > ➥ Makasih yg udh nyoba base bot saya, sebelumnya maaf bgt kalo ada kode yang masih berantakan atau ada fitur yang error, saya masih belajar buat bot wa, ohh iya jangan lupa star nya ya :v
