@@ -8,6 +8,7 @@ import {
   DisconnectReason,
   useMultiFileAuthState,
   jidDecode,
+  fetchLatestBaileysVersion,
   downloadContentFromMessage
 } from "baileys";
 
@@ -45,13 +46,22 @@ function getMessageText(m) {
 
 async function connectToWhatsApp() {
   const { state, saveCreds } = await useMultiFileAuthState("session");
+  const { version } = await fetchLatestBaileysVersion();
 
   const lexbot = makeWASocket({
     logger: pino({ level: "silent" }),
-    auth: state,
     printQRInTerminal: false,
-    browser: ["Ubuntu", "Chrome", "20.0.04"]
-  });
+    auth: state,
+    version,
+    connectTimeoutMs: 60000,
+    defaultQueryTimeoutMs: 0,
+    keepAliveIntervalMs: 10000,
+    generateHighQualityLinkPreview: true,
+    syncFullHistory: true,
+    markOnlineOnConnect: true,
+    emitOwnEvents: true,
+    browser: ['Ubuntu', 'Chrome', '20.0.04']
+  })
 
   if (!lexbot.authState.creds.registered) {
     const IsiNomor = await question("Nomor (62xxx): ");
@@ -113,8 +123,6 @@ async function connectToWhatsApp() {
       m.chat = m.key.remoteJid;
       m.isGroup = m.chat.endsWith("@g.us");
       m.sender = lexbot.decodeJid(m.isGroup ? m.key.participant : m.key.remoteJid);
-
-      if (m.key.fromMe) return;
       
       m.reply = (text) => lexbot.sendMessage(m.chat, { text }, { quoted: m });
 
