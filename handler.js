@@ -961,6 +961,74 @@ break;
 }
 break;
 
+  case "claude": {
+  if (!text)
+    return m.reply(`*Prompt nya mana?*\n*Contoh : .claude halo*`)
+
+  try {
+    const start = Date.now()
+    const { data } = await axios.get(
+      "https://api.lexcode.biz.id/api/ai/claude-3-haiku",
+      {
+        params: { prompt: text }
+      }
+    )
+
+    if (!data.success)
+      return m.reply("❌ Gagal mengambil response dari AI.")
+
+    let result = data.result
+
+    if (result.startsWith('"') && result.endsWith('"')) {
+      result = result.slice(1, -1)
+    }
+   const end = Date.now()
+   const responseTime = end - start
+   const now = new Date()
+
+   const date = now.toLocaleDateString("id-ID", {
+  day: "numeric",
+  month: "long",
+  year: "numeric"
+})
+
+    const time = now.toLocaleTimeString("id-ID", {
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit"
+})
+
+   const textClaude = `〔 *ᴄʟᴀᴜᴅᴇ 3 ʜᴀɪᴋᴜ ʀᴇsᴘᴏɴsᴇ* 〕
+
+➥ ${result}
+
+⌛ *ʀᴇsᴘᴏɴsᴇ ᴛɪᴍᴇ* : *${responseTime}* ms
+📆 *ᴛᴀɴɢɢᴀʟ* : *${date}*
+⏰ *ᴡᴀᴋᴛᴜ* : *${time}*`
+
+    await lexbot.sendMessage(
+      m.chat,
+      {
+        text: textClaude,
+        contextInfo: {
+          forwardingScore: 999,
+          isForwarded: true,
+          forwardedNewsletterMessageInfo: {
+            newsletterJid: global.idchannel,
+            newsletterName: "Claude 3 Haiku"
+          }
+        }
+      },
+      { quoted: m }
+    )
+
+  } catch (err) {
+    console.error(err)
+    m.reply("❌ Terjadi kesalahan pada AI, Mohon coba nanti")
+  }
+}
+break;
+
       default: {
         await lexbot.sendMessage(
           m.chat,
